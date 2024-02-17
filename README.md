@@ -1,4 +1,4 @@
-This repository showcases my personal portfolio website built with React. The site highlights my skills, experience, and passion for [your field/domain].
+This repository showcases my personal portfolio website built with React. The site highlights my skills, experience, and passion for Technology.
 
 Features:
 
@@ -10,13 +10,13 @@ Features:
 
 Demo:
 
-    View the live demo at [Your website URL].
+    View the live demo at https://ayushjrathod.github.io/
 
 How to Install:
 
-    Clone the repository: git clone https://github.com/your-username/react-portfolio.git
-    Install dependencies: npm install (or yarn install)
-    Start the development server: npm start (or yarn start)
+    Clone the repository: git clone https://github.com/ayushjrathod/Portfolio-Site-2.0.git
+    Install dependencies: npm install
+    Start the development server: npm start
 
 Contribution Guidelines:
 

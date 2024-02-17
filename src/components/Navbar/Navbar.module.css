@@ -1,0 +1,84 @@
+@import "../../vars.css";
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 61px;
+  z-index: 2;
+  margin-top: 0%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.logo {
+  font-family: var(--logo-text);
+  font-size: 30px;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--color-text);
+}
+.nav {
+  display: flex;
+}
+.navelements {
+  display: flex;
+  gap: 69px;
+  list-style: none;
+}
+
+.navelements a {
+  font-size: 25px;
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+}
+.navelements a::after{
+  content: " ";
+  width: 0;
+  height: 4px;
+  background: #00f7ffdd;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.3s;
+}
+
+.navelements  a:hover::after{
+  width: 100%;
+}
+
+
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .nav {
+   
+    flex-wrap: wrap;
+    right: 0;
+    margin-right: 10%;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
+
+  .navelements {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+    background: transparent;
+    margin-top: 5%;
+    padding: 24px 33px;
+    box-shadow: 0 0 4px 0 rgba(3, 3, 3, 0.578);
+  }
+
+  
+}

@@ -1,28 +1,34 @@
-import React from "react";
-
-import styles from "./About.module.css";
-import { getImageUrl } from "../../utils";
-
 export const About = () => {
   return (
-    <section className={styles.container} id="about">
-      <h2 className={styles.title}>About Me</h2>
-      <div className={styles.content}>
+    <section
+      className="backdrop:blur-lgh-full bg-gray-500 rounded-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 relative bg-[rgba(12,12,12,0.31)]  p-0 md:px-20 md:py-6 mt-32 z-10 mx-0 md:mx-5"
+      id="about"
+    >
+      <h2 className=" text-white text-4xl font-bold tracking-wider uppercase flex justify-center mb-12">
+        About Me
+      </h2>
+      <div className="flex flex-col md:flex-row items-center justify-between ">
         <img
-          src={getImageUrl("about/aboutus2.png")}
+          src="assets/about/aboutme.png"
           alt="about me image"
-          className={styles.aboutImage}
+          className="size-72 md:size-80 h-auto items-start m-4"
         />
-        <p className={styles.aboutText}>
-          Hello, I'm Ayush Rathod, I am driven by a profound passion for programming and a thirst for knowledge that knows no bounds.<br />
-          <p><br /> </p>
-What truly sets me apart is my unwavering commitment to continuous growth. I'm always eager to embrace new technologies and adapt to the ever-evolving tech landscape,
-believing that versatility is key to success in this fast-paced industry.<br />
-<p><br /> </p>
-Beyond the lines of code, I find solace in the world of sports, often taking to the badminton court for an adrenaline rush. I'm also an avid gamer, particularly in love with Valorant. 
-And on those quiet evenings, you'll find me lost in the pages of books or strumming chords on my guitar, a hobby I'm determined to master.<br />
-<p><br /> </p>
-Join me on this exhilarating journey as I explore the limitless possibilities of technology and creativity. Let's make magic together!
+        <p className="text-white font-bold text-2xl items-end leading-10 ml-10">
+          Ayush Rathod here. Code is my oxygen, and I gotta keep inhaling that knowledge.
+          <br />
+          <br />
+          I'm all about staying ahead of the curve. New tech? Bring it on.
+          Stagnation? Not my style. Versatility is the name of the game, and
+          this industry moves fast.
+          <br />
+          <br /> When I'm not writing code, you'll find me on the badminton
+          court for a dose of adrenaline or diving into the latest video game. Quiet
+          nights? Books or battling some epic chords on my guitar (still a work
+          in progress, but hey, gotta start somewhere).
+          <br />
+          <br />
+          Let's break the mold and create something awesome together. Buckle up,
+          it's gonna be a wild ride.
         </p>
       </div>
     </section>

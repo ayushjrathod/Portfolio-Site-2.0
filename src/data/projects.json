@@ -4,17 +4,17 @@
 [
   {
     "title": "Mini Golf Game",
-    "imageSrc": "projects/golf.jpg",
+    "imageSrc": "assets/projects/golf.jpg",
     "description": "This is interactive golf game made using CPP and Raylib Framework."
   },
   {
     "title": "Stock Trend Prediction Web App",
-    "imageSrc": "projects/stock.jpg",
+    "imageSrc": "assets/projects/stock.jpg",
     "description": "This project is based on deep learning model and predicts with future stock prices"
   },
   {
     "title": "Portfolio Website",
-    "imageSrc": "projects/project.png",
+    "imageSrc": "assets/projects/project.png",
     "description": "The website currently you are on is the project, Made with HTML,CSS,JAX,REACT.js"
   }
 ]

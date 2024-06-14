@@ -21,7 +21,7 @@
   },
   {
     "title": "TypeScript",
-    "imageSrc": "skills/ts-logo-512.png"
+    "imageSrc": "skills/ts.png"
   },
   {
     "title": "JavaScript",
@@ -49,7 +49,7 @@
   },
   {
     "title":"Tailwind CSS",
-    "imageSrc":"skills/tailwind.png"
+    "imageSrc":"skills/tailwind.svg"
   },
   {
     "title": "React",
@@ -57,7 +57,7 @@
   },
   {
     "title": "Photoshop",
-    "imageSrc": "skills/adobe-photoshop.png"
+    "imageSrc": "skills/photoshop.png"
   },
   {
     "title": "Figma",

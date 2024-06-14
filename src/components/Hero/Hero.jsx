@@ -1,6 +1,8 @@
 import React from "react";
 
+import TypingText from "./typingText";
 import { getImageUrl } from "../../utils";
+import MagicButton from "./button";
 
 export const Hero = () => {
   return (
@@ -9,19 +11,21 @@ export const Hero = () => {
         <h1 className=" text-white text-5xl md:text-7xl font-bold mb-2 font-tech">
           Hi, I'm Ayush
         </h1>
-        <h3 className=" text-white text-2xl md:text-4xl font-semibold mb-2 font-tech">
+        {/* <h3 className=" text-white text-2xl md:text-4xl font-semibold mb-2 font-tech">
           Developer and Designer
-        </h3>
+        </h3> */}
+        <TypingText />
         <p className=" text-white text-lg md:text-xl font-medium mb-8 font-tech">
-          I'm a developer with fiery passion for programming.
+          I'm a programming fanatic with a burning desire to code.
         </p>
-        <a
-          href="https://drive.google.com/file/d/1mMisSgPVI7NFLNIjVZyO2PdpsO01k45B/view?usp=sharing"
+        {/* <a
+          href="https://drive.google.com/file/d/1uO4DkZr_07EjQfRkWSvn6u8QKK5dFfe4/view?usp=sharing"
           className="text-white  text-text bg-[#4e4394] rounded-lg text-xl md:text-2xl font-semibold px-8 py-5"
           target="_blank"
         >
           Download CV
-        </a>
+        </a> */}
+        <MagicButton />
       </div>
       <img
         src={getImageUrl("hero/coding2.gif")}

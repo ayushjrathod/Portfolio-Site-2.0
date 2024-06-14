@@ -29,9 +29,15 @@ export const Navbar = () => {
       <div className="hidden md:block">
         <ul className="flex flex-row gap-5 no-underline">
           <li>
+            {/* <a
+              href="#about"
+              className="font-Akshar font-semibold relative text-xl bg-gray-800 py-2.5 px-5 text-white transition-colours before:content-[''] before:absolute before:inset-0 before:w-full before:h-full before:border-2 before:border-transparent before:hover:border-gray-800 before:hover:top-1 before:hover:left-1 before:z-10 before:transition-all"
+            >
+              About
+            </a> */}
             <a
               href="#about"
-              className="font-Akshar text-2xl font-semibold spacing"
+              className="relative font-Akshar text-2xl font-semibold spacing  hover:border-gray-800 hover:top-1 hover:border-2 hover:transition-all"
             >
               About
             </a>
@@ -39,7 +45,7 @@ export const Navbar = () => {
           <li>
             <a
               href="#skills"
-              className="font-Akshar text-2xl font-semibold spacing"
+              className="relative font-Akshar text-2xl font-semibold spacing hover:border-gray-800 hover:top-1 hover:border-2 hover:transition-all"
             >
               Skills
             </a>
@@ -47,7 +53,7 @@ export const Navbar = () => {
           <li>
             <a
               href="#projects"
-              className="font-Akshar text-2xl font-semibold spacing"
+              className="relative font-Akshar text-2xl font-semibold spacing  hover:border-gray-800 hover:top-1 hover:border-2 hover:transition-all  "
             >
               Projects
             </a>
@@ -55,7 +61,7 @@ export const Navbar = () => {
           <li>
             <a
               href="#contact"
-              className="font-Akshar text-2xl font-semibold spacing"
+              className="relative font-Akshar text-2xl font-semibold spacing hover:border-gray-800 hover:top-1 hover:border-2 hover:transition-all  "
             >
               Contact
             </a>

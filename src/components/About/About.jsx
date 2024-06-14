@@ -14,12 +14,11 @@ export const About = () => {
           className="size-72 md:size-80 h-auto items-start m-4"
         />
         <p className="text-white font-bold text-2xl items-end leading-10 ml-10">
-          Ayush Rathod here. Code is my oxygen, and I gotta keep inhaling that knowledge.
+          I am really passionate about creating programs that solve real world problems.
           <br />
           <br />
-          I'm all about staying ahead of the curve. New tech? Bring it on.
-          Stagnation? Not my style. Versatility is the name of the game, and
-          this industry moves fast.
+          I try to stay ahead of the curve. New tech? Bring it on.
+          Stagnation? Not my style. I am Versatile as this Tech. industry moves fast.
           <br />
           <br /> When I'm not writing code, you'll find me on the badminton
           court for a dose of adrenaline or diving into the latest video game. Quiet

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { createPopper } from "@popperjs/core";
+import { getImageUrl } from "../../utils";
 
 const Dropdown = () => {
   // dropdown props
@@ -47,7 +48,7 @@ const Dropdown = () => {
           }}
         >
           <img
-            src="assets/hero/menu.png"
+            src={getImageUrl("assets/hero/menu.png")}
             className="size-10"
           />
         </button>

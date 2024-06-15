@@ -1,3 +1,5 @@
+import { getImageUrl } from "../../utils";
+
 export const Contact = () => {
   return (
     <footer
@@ -17,23 +19,29 @@ export const Contact = () => {
           href="https://www.linkedin.com/in/ayushjrathod"
           className="text-[#0fd8f3]"
         >
-          <img src="assets/contact/linkedin.png" />
+          <img src={getImageUrl("contact/linkedin.png")} />
         </a>
         <a
           target="_blank"
           href="https://github.com/ayushjrathod"
           className="text-[#0fd8f3]"
-        ><img src="assets/contact/github.png" /></a>
+        >
+          <img src={getImageUrl("contact/github.png")} />
+        </a>
         <a
           target="_blank"
           href="https://twitter.com/ayushjrathod"
           className="text-[#0fd8f3]"
-        ><img src="assets/contact/twitter.png" /></a>
+        >
+          <img src={getImageUrl("contact/twitter.png")} />
+        </a>
         <a
           target="_blank"
           href="https://www.instagram.com/ayushjrathod"
           className="text-[#0fd8f3]"
-        ><img src="assets/contact/instagram.png" /></a>
+        >
+          <img src={getImageUrl("contact/instagram.png")} />
+        </a>
       </div>
     </footer>
   );

@@ -4,25 +4,25 @@
 [
   {
     "title": "Mini Golf Game",
-    "imageSrc": "assets/projects/golf.jpg",
+    "imageSrc": "projects/golf.jpg",
     "description": "This is interactive golf game made using CPP and Raylib Framework.",
     "github":"https://github.com/ayushjrathod/Mini-Golf-Game"
   },
   {
     "title": "Stock Trend Prediction Web App",
-    "imageSrc": "assets/projects/stock.jpg",
+    "imageSrc": "projects/stock.jpg",
     "description": "This project is based on deep learning model and predicts with future stock prices",
     "github":"https://github.com/ayushjrathod/Stock-Trend-Prediction-Web-App"
   },
   {
     "title": "Hawknode",
-    "imageSrc": "assets/projects/hawknode.png",
+    "imageSrc": "projects/hawknode.png",
     "description": "A blogging website made using MERN stack and Tailwind CSS with features like user authentication, CRUD operations on posts, etc.",
     "github":"https://github.com/ayushjrathod/hawknode-2.0"
   },
   {
     "title": "Online Learning Assesment Platform",
-    "imageSrc": "assets/projects/OLAP.png",
+    "imageSrc": "projects/OLAP.png",
     "description": "A platform simliar to google forms where teachers can create quizzes and students can take them.",
     "github":"https://github.com/ayushjrathod/Online-Learning-Assessment-Platform"
   }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import projects from "../../data/projects.json";
+import { getImageUrl } from "../../utils";
+
 
 export const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,7 +36,7 @@ export const Projects = () => {
               }`}
             >
               <img
-                src={project.imageSrc}
+                src={getImageUrl(project.imageSrc)}
                 alt={`Slide ${index + 1}`}
                 className=" w-fit h-fit md:w-full md:h-full object-cover rounded-xl"
               />
@@ -82,7 +84,7 @@ export const Projects = () => {
               onClick={() => setActiveIndex(index)}
             >
               <img
-                src={project.imageSrc}
+                src={getImageUrl(project.imageSrc)}
                 alt={`Thumbnail ${index + 1}`}
                 className="w-full h-1/2 md:h-full object-cover rounded-lg"
               />

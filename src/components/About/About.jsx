@@ -1,3 +1,6 @@
+import { getImageUrl } from "../../utils";
+
+
 export const About = () => {
   return (
     <section
@@ -9,7 +12,7 @@ export const About = () => {
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-between ">
         <img
-          src="assets/about/aboutme.png"
+          src={getImageUrl("about/aboutme.png")}
           alt="about me image"
           className="size-72 md:size-80 h-auto items-start m-4"
         />

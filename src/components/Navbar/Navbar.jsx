@@ -1,5 +1,6 @@
 import React from "react";
 import Dropdown from "./dropdown";
+import { getImageUrl } from "../../utils";
 
 export const Navbar = () => {
   return (
@@ -8,7 +9,7 @@ export const Navbar = () => {
         <div>
           <a href="/">
             <img
-              src="assets/hero/ayushPic.jpg"
+              src={getImageUrl("hero/ayushPic.jpg")}
               className="size-14 rounded-full border-4"
               href="/"
             />

@@ -52,7 +52,7 @@ export const Projects = () => {
               </div>
               <div>
                 <a className="z-10" href={project.github}>
-                  <img src="assets/contact/github.png" className="z-10 absolute top-0 right-0 p-4 size-20"/>
+                  <img src={getImageUrl("assets/contact/github.png")} className="z-10 absolute top-0 right-0 p-4 size-20"/>
                 </a>
               </div>
             </div>

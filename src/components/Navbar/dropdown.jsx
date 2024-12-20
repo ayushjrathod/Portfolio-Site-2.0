@@ -48,7 +48,7 @@ const Dropdown = () => {
           }}
         >
           <img
-            src={getImageUrl("assets/hero/menu.png")}
+            src={getImageUrl("hero/menu.png")}
             className="size-10"
           />
         </button>

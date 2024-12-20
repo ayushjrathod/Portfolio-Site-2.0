@@ -1,100 +1,98 @@
-import React, { useState, useEffect } from "react";
-import projects from "../../data/projects.json";
-import { getImageUrl } from "../../utils";
+"use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useCallback, useEffect, useState } from "react";
+import projectsData from "../../data/projects.json";
+import { getImageUrl } from "../../utils";
 
 export const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const nextSlide = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
-  };
+  const nextSlide = useCallback(() => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % projectsData.length);
+  }, []);
 
-  const prevSlide = () => {
-    setActiveIndex(
-      (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
-    );
-  };
+  const prevSlide = useCallback(() => {
+    setActiveIndex((prevIndex) => (prevIndex - 1 + projectsData.length) % projectsData.length);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   return (
-    <>
-      <h2 className="text-white text-4xl font-bold tracking-wider uppercase flex justify-center mt-12">
-        Projects
-      </h2>
-      <div className="relative h-screen my-8 mx-0 md:mx-32" id="projects">
-        <div className="absolute inset-0 transition-opacity duration-600">
-          {projects.map((project, index) => (
+    <section className="py-16 min-h-screen" id="projects">
+      <div className="container mx-auto px-4">
+        <h2 className="text-white text-4xl font-bold tracking-wider uppercase text-center mb-6 flex w-full justify-center">
+          Projects
+        </h2>
+        <div className="relative min-h-[500px] md:h-[70vh] w-full overflow-hidden rounded-xl">
+          {projectsData.map((project, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-500 ${
-                index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+              className={`absolute inset-0 w-full h-full transition-all duration-500 ${
+                index === activeIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
               }`}
+              style={{ zIndex: index === activeIndex ? 20 : 10 }}
             >
-              <img
-                src={getImageUrl(project.imageSrc)}
-                alt={`Slide ${index + 1}`}
-                className=" w-fit h-fit md:w-full md:h-full object-cover rounded-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-              <div className="text-white absolute top-24 left-2 md:top-1/4 md:left-10 md:w-1/2 text-left z-10">
-                {/* <p className="uppercase tracking-wide font-bold">
-                  {project.title}
-                </p> */}
-                <h2 className="text-lg md:text-4xl font-bold">
-                  {project.title}
-                </h2>
-                <p className="mt-1 md:mt-4 font-bold">{project.description}</p>
-              </div>
-              <div>
-                <a className="z-10" href={project.github}>
-                  <img src={getImageUrl("contact/github.png")} className="z-10 absolute top-0 right-0 p-4 size-20"/>
-                </a>
+              <div className="relative w-full h-full">
+                <img
+                  src={getImageUrl(project.imageSrc)}
+                  alt={`Project: ${project.title}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white z-30">
+                  <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
+                  <p className="text-lg mb-6">{project.description}</p>
+                  <button
+                    onClick={() => window.open(project.github, "_blank")}
+                    className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-md text-white"
+                  >
+                    <img src={getImageUrl("contact/github.png")} alt="GitHub" className="w-6 h-6 mr-2" />
+                    View on GitHub
+                  </button>
+                </div>
               </div>
             </div>
           ))}
-        </div>
 
-        <div className=" hidden md:block md:absolute top-1/3 right-12 z-10 space-y-4">
           <button
+            className="z-50 absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2 text-white"
             onClick={prevSlide}
-            className="bg-white/70 hover:bg-white text-black w-10 h-10 rounded-md text-xl mx-1"
+            aria-label="Previous project"
           >
-            &lt;
+            <ChevronLeft className="w-6 h-6" />
           </button>
           <button
+            className="z-50 absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2 text-white"
             onClick={nextSlide}
-            className="bg-white/70 hover:bg-white text-black w-10 h-10 rounded-md text-xl mx-1"
+            aria-label="Next project"
           >
-            &gt;
+            <ChevronRight className="w-6 h-6" />
           </button>
         </div>
-
-        <div className="absolute top-1/3 md:top-2/3 inset-x-0 flex justify-center space-x-4 z-10 overflow-auto px-12">
-          {projects.map((project, index) => (
-            <div
+        {/* 
+        <div className="mt-8 flex justify-center space-x-4 overflow-x-auto py-4">
+          {projectsData.map((project, index) => (
+            <button
               key={index}
-              className={`w-36 h-52 flex-shrink-0 ${
-                index === activeIndex ? "brightness-125" : "brightness-50"
-              } transition duration-500`}
+              className={`focus:outline-none transition-all duration-300 ${
+                index === activeIndex ? "scale-110 border-2 border-white" : "opacity-50 hover:opacity-75"
+              }`}
               onClick={() => setActiveIndex(index)}
+              aria-label={`View ${project.title} project`}
             >
               <img
                 src={getImageUrl(project.imageSrc)}
-                alt={`Thumbnail ${index + 1}`}
-                className="w-full h-1/2 md:h-full object-cover rounded-lg"
+                alt={`Thumbnail: ${project.title}`}
+                className="w-24 h-24 object-cover"
               />
-              <div className="text-white font-bold absolute inset-x-0 top-1/3 md:top-3/4 text-center text-sm">
-                {project.title}
-              </div>
-            </div>
+            </button>
           ))}
-        </div>
+        </div> */}
       </div>
-    </>
+    </section>
   );
 };

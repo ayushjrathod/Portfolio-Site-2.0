@@ -1,29 +1,30 @@
-
-
-
 [
   {
     "title": "Mini Golf Game",
     "imageSrc": "projects/golf.jpg",
     "description": "This is interactive golf game made using CPP and Raylib Framework.",
-    "github":"https://github.com/ayushjrathod/Mini-Golf-Game"
+    "github": "https://github.com/ayushjrathod/Mini-Golf-Game",
+    "liveLink": "github.com/ayushjrathod/Mini-Golf-Game"
   },
   {
     "title": "Stock Trend Prediction Web App",
     "imageSrc": "projects/stock.jpg",
     "description": "This project is based on deep learning model and predicts with future stock prices",
-    "github":"https://github.com/ayushjrathod/Stock-Trend-Prediction-Web-App"
+    "github": "https://github.com/ayushjrathod/Stock-Trend-Prediction-Web-App",
+    "liveLink": "https://stock-trend-prediction-web-app.herokuapp.com/"
   },
   {
     "title": "Hawknode",
     "imageSrc": "projects/hawknode.png",
     "description": "A blogging website made using MERN stack and Tailwind CSS with features like user authentication, CRUD operations on posts, etc.",
-    "github":"https://github.com/ayushjrathod/hawknode-2.0"
+    "github": "https://github.com/ayushjrathod/hawknode-2.0",
+    "liveLink": "https://hawknode.herokuapp.com/"
   },
   {
     "title": "Online Learning Assesment Platform",
     "imageSrc": "projects/OLAP.png",
     "description": "A platform simliar to google forms where teachers can create quizzes and students can take them.",
-    "github":"https://github.com/ayushjrathod/Online-Learning-Assessment-Platform"
+    "github": "https://github.com/ayushjrathod/Online-Learning-Assessment-Platform",
+    "liveLink": "https://olap-ayush.herokuapp.com/"
   }
 ]

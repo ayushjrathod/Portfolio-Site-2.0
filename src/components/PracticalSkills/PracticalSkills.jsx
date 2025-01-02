@@ -1,20 +1,20 @@
 "use client";
 
 import { BarChart3, Code2 } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 
 const experiences = [
   {
     icon: "developer",
     title: "API Development",
-    company: "Technical Skill",
-    description: "Design and implementation of RESTful and GraphQL APIs, with focus on scalability and security",
+    company: "Backend Skill",
+    description: "Design and implementation of RESTful APIs, with focus on scalability and security",
     link: "#",
   },
   {
     icon: "chart",
     title: "Full-Stack Development",
-    company: "Technical Skill",
+    company: "MERN Stack",
     description:
       "End-to-end application development using modern frameworks and best practices for both frontend and backend",
     link: "#",
@@ -36,54 +36,47 @@ const experiences = [
   {
     icon: "developer",
     title: "Chatbot Integration",
-    company: "AI/ML Skill",
+    company: "Web Devlopment and AI/ML Skill",
     description: "Development and deployment of AI-powered conversational interfaces across multiple platforms",
-    link: "#",
-  },
-  {
-    icon: "developer",
-    title: "Web and Mobile App Development Intern",
-    company: "Curomates",
-    description:
-      "Developed backend APIs, integrated Nodemailer, and implemented features like video-on-focus play, swipe-to-reply, and recursive methods for nested comments, resulting in a 20% increase in user engagement.",
-    link: "#",
-  },
-  {
-    icon: "chart",
-    title: "Web Developer Intern",
-    company: "CodeWithZeal",
-    description:
-      "Contributed to React-based web applications, collaborated with teams on UI/UX design, and developed full-stack applications using MERN, leading to a 30% boost in user interaction.",
     link: "#",
   },
 ];
 
 export function PracticalSkills() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const containerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
-  const nextSlide = useCallback(() => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex((prev) => (prev + 1) % experiences.length);
-    }
-  }, [isAnimating]);
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    const container = containerRef.current;
+    container.style.cursor = "grabbing";
+    container.style.userSelect = "none";
+    container.style.animationPlayState = "paused";
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 500);
+    setStartX(e.pageX - container.offsetLeft);
+    setScrollLeft(container.scrollLeft);
+  };
 
-    return () => clearTimeout(timer);
-  }, [currentIndex]);
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const container = containerRef.current;
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 2; // scroll-fast
+    container.scrollLeft = scrollLeft - walk;
+  };
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, [nextSlide]);
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    const container = containerRef.current;
+    container.style.cursor = "grab";
+    container.style.removeProperty("user-select");
+    container.style.animationPlayState = "running";
+  };
 
   return (
-    <div className="min-h-screen bg-[#0a0a1a] py-16 overflow-hidden">
+    <div className="bg-[#0a0a1a] py-2 overflow-hidden">
       <div className="relative w-full">
         {/* Gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
@@ -91,15 +84,17 @@ export function PracticalSkills() {
 
         <div className="relative">
           <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
+            className="flex gap-8 w-[200%] cursor-grab animate-scroll"
+            ref={containerRef}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
           >
-            {experiences.map((experience, index) => (
-              <div key={index} className="w-full flex-shrink-0 px-4 py-12">
-                <div className="max-w-3xl mx-auto">
-                  <div className="relative p-8 rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-white/10 backdrop-blur-sm hover:from-white/15 hover:to-white/10 transition-colors">
+            {[...experiences, ...experiences].map((experience, index) => (
+              <div key={index} className="flex-shrink-0 w-[600px] h-[320px] px-2 py-12">
+                <div className="max-w-3xl mx-auto h-full">
+                  <div className="relative p-8 h-full rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-white/10 backdrop-blur-sm hover:from-white/15 hover:to-white/10 transition-colors">
                     <div className="absolute top-0 left-0 -translate-x-3 -translate-y-3">
                       <div
                         className={`w-16 h-16 rounded-2xl ${
@@ -125,21 +120,18 @@ export function PracticalSkills() {
               </div>
             ))}
           </div>
-
-          {/* Navigation Dots */}
-          <div className="flex justify-center gap-2 mt-8">
-            {experiences.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => !isAnimating && setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "bg-white scale-125" : "bg-white/30 hover:bg-white/50"
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </div>
   );
 }
+
+// Add these keyframes in a global CSS file or inside a <style> tag:
+// @keyframes scrolling {
+//   0% {
+//     transform: translateX(0%);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// }

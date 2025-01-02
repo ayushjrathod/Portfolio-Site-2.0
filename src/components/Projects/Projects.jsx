@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
 import React, { useCallback, useEffect, useState } from "react";
 import projectsData from "../../data/projects.json";
 import { getImageUrl } from "../../utils";
@@ -22,11 +22,9 @@ export const Projects = () => {
   }, [nextSlide]);
 
   return (
-    <section className="py-16 min-h-screen" id="projects">
+    <section className="" id="projects">
       <div className="container mx-auto px-4">
-        <h2 className="text-white text-4xl font-bold tracking-wider uppercase text-center mb-6 flex w-full justify-center">
-          Projects
-        </h2>
+        <h2 className="text-white text-4xl font-bold tracking-wider uppercase w-full text-center mb-12">Projects</h2>
         <div className="relative min-h-[500px] md:h-[70vh] w-full overflow-hidden rounded-xl">
           {projectsData.map((project, index) => (
             <div
@@ -46,52 +44,56 @@ export const Projects = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white z-30">
                   <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
                   <p className="text-lg mb-6">{project.description}</p>
-                  <button
-                    onClick={() => window.open(project.github, "_blank")}
-                    className="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-md text-white"
-                  >
-                    <img src={getImageUrl("contact/github.png")} alt="GitHub" className="w-6 h-6 mr-2" />
-                    View on GitHub
-                  </button>
+                  <div className="flex space-x-4">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 transition-colors rounded-md text-white"
+                    >
+                      <ExternalLink className="w-5 h-5 mr-2" />
+                      Live Demo
+                    </a>
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 transition-colors rounded-md text-white"
+                    >
+                      <Github className="w-5 h-5 mr-2" />
+                      GitHub
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
 
           <button
-            className="z-50 absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2 text-white"
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2 text-white z-50"
             onClick={prevSlide}
             aria-label="Previous project"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
-            className="z-50 absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2 text-white"
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 transition-colors rounded-full p-2 text-white z-50"
             onClick={nextSlide}
             aria-label="Next project"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
         </div>
-        {/* 
-        <div className="mt-8 flex justify-center space-x-4 overflow-x-auto py-4">
-          {projectsData.map((project, index) => (
+        <div className="mt-8 flex justify-center space-x-2">
+          {projectsData.map((_, index) => (
             <button
               key={index}
-              className={`focus:outline-none transition-all duration-300 ${
-                index === activeIndex ? "scale-110 border-2 border-white" : "opacity-50 hover:opacity-75"
-              }`}
+              className={`w-3 h-3 rounded-full ${index === activeIndex ? "bg-blue-600" : "bg-gray-600"}`}
               onClick={() => setActiveIndex(index)}
-              aria-label={`View ${project.title} project`}
-            >
-              <img
-                src={getImageUrl(project.imageSrc)}
-                alt={`Thumbnail: ${project.title}`}
-                className="w-24 h-24 object-cover"
-              />
-            </button>
+              aria-label={`Go to project ${index + 1}`}
+            />
           ))}
-        </div> */}
+        </div>
       </div>
     </section>
   );

@@ -2,46 +2,62 @@ import { getImageUrl } from "../../utils";
 
 export const Contact = () => {
   return (
-    <footer
-      id="contact"
-      className="relative md:flex bg-[rgba(12,12,12,0.31)] rounded-lg mt-32 z-10 mx-5 mb-5 text-[--color-text]  justify-between"
-    >
-      <div className="text-xl font-bold tracking-wider mb-4 md:mb-0">
-        {/* <h2 className="text-white">Contact Me </h2> */}
-        <h4 className="text-white mb-2">I'm Just One Click Away</h4>
-        <a className=" text-white" href="mailto:ayushjrathod7@gmail.com">
-          ayushjrathod7@gmail.com
-        </a>
-      </div>
-      <div className=" w-64 inline-flex gap-10 text-5xl no-underline items-center justify-center ml-4 mt-4 mr-5">
-        <a
-          target="_blank"
-          href="https://www.linkedin.com/in/ayushjrathod"
-          className="text-[#0fd8f3]"
-        >
-          <img src={getImageUrl("contact/linkedin.png")} />
-        </a>
-        <a
-          target="_blank"
-          href="https://github.com/ayushjrathod"
-          className="text-[#0fd8f3]"
-        >
-          <img src={getImageUrl("contact/github.png")} />
-        </a>
-        <a
-          target="_blank"
-          href="https://twitter.com/ayushjrathod"
-          className="text-[#0fd8f3]"
-        >
-          <img src={getImageUrl("contact/twitter.png")} />
-        </a>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/ayushjrathod"
-          className="text-[#0fd8f3]"
-        >
-          <img src={getImageUrl("contact/instagram.png")} />
-        </a>
+    <footer id="contact" className="bg-transparent backdrop-blur-sm text-white rounded-lg mt-32 mx-auto mb-5 max-w-7xl">
+      <div className="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+          <div className="text-center md:text-left">
+            <h2 className="text-2xl font-bold tracking-tight mb-2">Let's Connect</h2>
+            <a
+              href="mailto:ayushjrathod7@gmail.com"
+              className="text-lg font-medium text-blue-400 hover:text-blue-300 transition-colors duration-300 flex items-center justify-center md:justify-start"
+            >
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              ayushjrathod7@gmail.com
+            </a>
+          </div>
+          <div className="flex space-x-6">
+            <a
+              href="https://www.linkedin.com/in/ayushjrathod"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+              aria-label="LinkedIn"
+            >
+              <img src={getImageUrl("contact/linkedin.png")} alt="LinkedIn" className="w-8 h-8" />
+            </a>
+            <a
+              href="https://github.com/ayushjrathod"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-gray-100 transition-colors duration-300"
+              aria-label="GitHub"
+            >
+              <img src={getImageUrl("contact/github.png")} alt="GitHub" className="w-8 h-8" />
+            </a>
+            <a
+              href="https://twitter.com/ayushjrathod"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-blue-300 transition-colors duration-300"
+              aria-label="Twitter"
+            >
+              <img src={getImageUrl("contact/twitter.png")} alt="Twitter" className="w-8 h-8" />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

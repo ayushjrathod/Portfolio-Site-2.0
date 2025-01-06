@@ -1,37 +1,60 @@
-import React,{useEffect} from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 
 const TypingText = () => {
-    useEffect(()=>{
-        const text = document.querySelector(".sec-text");
+  const words = ["Freelancer", "Developer", "Designer", "ML Developer"];
+  const TYPING_INTERVAL = 150;
+  const WORD_DISPLAY_TIME = 2000;
 
-        const textLoad = ()=>{
-            setTimeout(() => {
-                text.textContent = 'Developer';
-            }, 0);
-            setTimeout(() => {
-                text.textContent = 'Designer';
-            }, 4000);
-            setTimeout(() => {
-                text.textContent = 'ML Enthusiast';
-            }, 8000);
-        };
-        textLoad();
+  const [currentWord, setCurrentWord] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-        const intervalId = setInterval(textLoad, 12000);
+  useEffect(() => {
+    let timer;
 
-        return () => clearInterval(intervalId);
-    },[]);
+    const animateText = () => {
+      const fullWord = words[currentIndex];
 
-    return (
-    <div className="flex items-center justify-center bg-[#010718]">
-      <div className="w-[246px] overflow-hidden">
-        {/* <span className="relative text-[30px] font-semibold text-white">I'm a</span> */}
-        <span className="relative text-[30px] font-semibold text-[#ffb039] sec-text before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-[#010718] before:border-l-2 before:border-[#4070F4] before:animate-typing">
-          Freelancer
+      if (!isDeleting && currentWord === fullWord) {
+        timer = setTimeout(() => setIsDeleting(true), WORD_DISPLAY_TIME);
+      } else if (isDeleting && currentWord === "") {
+        setIsDeleting(false);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+      } else {
+        setCurrentWord((prev) => (isDeleting ? prev.slice(0, -1) : fullWord.slice(0, prev.length + 1)));
+      }
+    };
+
+    timer = setTimeout(animateText, isDeleting ? TYPING_INTERVAL / 2 : TYPING_INTERVAL);
+
+    return () => clearTimeout(timer);
+  }, [currentWord, currentIndex, isDeleting]);
+
+  return (
+    <div className="my-2 flex items-center justify-center bg-[#010718]">
+      <div className="overflow-hidden">
+        <span className="text-3xl font-semibold text-white mr-2">I'm a</span>
+        <span
+          className="
+            relative 
+            text-3xl 
+            font-semibold 
+            text-[#ffb039] 
+            before:absolute 
+            before:top-0 
+            before:right-0 
+            before:h-full 
+            before:w-[2px] 
+            before:bg-[#4070F4] 
+            before:animate-blink
+          "
+        >
+          {currentWord}
         </span>
       </div>
     </div>
   );
-}
+};
 
-export default  TypingText;
+export default TypingText;

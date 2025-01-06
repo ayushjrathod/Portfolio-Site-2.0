@@ -1,94 +1,132 @@
 [
   {
     "title": "C",
-    "imageSrc": "skills/c.png"
+    "imageSrc": "skills/c.png",
+    "url": "https://devdocs.io/c/"
   },
   {
     "title": "CPP",
-    "imageSrc": "skills/cpp.png"
+    "imageSrc": "skills/cpp.png",
+    "url": "https://cplusplus.com/"
   },
   {
     "title": "Python",
-    "imageSrc": "skills/python.png"
+    "imageSrc": "skills/python.png",
+    "url": "https://www.python.org/"
   },
   {
     "title": "HTML",
-    "imageSrc": "skills/html.png"
+    "imageSrc": "skills/html.png",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
   },
   {
     "title": "CSS",
-    "imageSrc": "skills/css.png"
+    "imageSrc": "skills/css.png",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+  },
+  {
+    "title": "Tailwind CSS",
+    "imageSrc": "skills/tailwind.svg",
+    "url": "https://tailwindcss.com/"
   },
   {
     "title": "JavaScript",
-    "imageSrc": "skills/javascript.png"
+    "imageSrc": "skills/javascript.png",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
     "title": "TypeScript",
-    "imageSrc": "skills/typescript.png"
+    "imageSrc": "skills/typescript.png",
+    "url": "https://www.typescriptlang.org/"
   },
   {
     "title": "SQL",
-    "imageSrc": "skills/sql.png"
+    "imageSrc": "skills/sql.png",
+    "url": "https://www.w3schools.com/sql/"
   },
   {
     "title": "PostgreSQL",
-    "imageSrc": "skills/postgres.png"
+    "imageSrc": "skills/postgres.png",
+    "url": "https://www.postgresql.org/"
   },
   {
     "title": "React.js",
-    "imageSrc": "skills/react.png"
+    "imageSrc": "skills/react.png",
+    "url": "https://react.dev/"
   },
   {
     "title": "Next.js",
-    "imageSrc": "skills/nextjs.png"
+    "imageSrc": "skills/nextjs.png",
+    "url": "https://nextjs.org/"
   },
   {
     "title": "Node.js",
-    "imageSrc": "skills/nodejs.png"
+    "imageSrc": "skills/nodejs.png",
+    "url": "https://nodejs.org/"
   },
   {
     "title": "Express.js",
-    "imageSrc": "skills/express.png"
+    "imageSrc": "skills/express.png",
+    "url": "https://expressjs.com/"
   },
   {
     "title": "MongoDB",
-    "imageSrc": "skills/mongo.png"
+    "imageSrc": "skills/mongo.png",
+    "url": "https://www.mongodb.com/"
   },
   {
     "title": "FastAPI",
-    "imageSrc": "skills/fastapi.png"
+    "imageSrc": "skills/fastapi.png",
+    "url": "https://fastapi.tiangolo.com/"
   },
   {
     "title": "Hono.js",
-    "imageSrc": "skills/honojs.png"
+    "imageSrc": "skills/honojs.png",
+    "url": "https://hono.dev/"
   },
   {
     "title": "Prisma",
-    "imageSrc": "skills/prisma.png"
+    "imageSrc": "skills/prisma.png",
+    "url": "https://www.prisma.io/"
   },
   {
     "title": "Zod",
-    "imageSrc": "skills/zod.png"
+    "imageSrc": "skills/zod.png",
+    "url": "https://zod.dev/"
   },
   {
     "title": "Git",
-    "imageSrc": "skills/git.png"
+    "imageSrc": "skills/git.png",
+    "url": "https://git-scm.com/"
   },
   {
     "title": "Docker",
-    "imageSrc": "skills/docker.png"
+    "imageSrc": "skills/docker.png",
+    "url": "https://www.docker.com/"
   },
   {
     "title": "Postman",
-    "imageSrc": "skills/postman.png"
+    "imageSrc": "skills/postman.png",
+    "url": "https://www.postman.com/"
   },
   {
     "title": "Tableau",
-    "imageSrc": "skills/tablaue.png"
+    "imageSrc": "skills/tablaue.png",
+    "url": "https://www.tableau.com/"
   },
   {
     "title": "Streamlit",
-    "imageSrc": "skills/streamlit.png"
+    "imageSrc": "skills/streamlit.png",
+    "url": "https://streamlit.io/"
+  },
+  {
+    "title": "Figma",
+    "imageSrc": "skills/figma.png",
+    "url": "https://www.figma.com/"
+  },
+  {
+    "title": "Linux",
+    "imageSrc": "skills/linux.png",
+    "url": "https://www.linux.org/"
   }
 ]

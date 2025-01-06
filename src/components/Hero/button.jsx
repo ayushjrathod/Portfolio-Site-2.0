@@ -1,20 +1,22 @@
 import React from "react";
 import "../../styles/styles.css";
 
-import star from "../../../assets/hero/img/star.png"; 
 import circle from "../../../assets/hero/img/circle.png";
 import diamond from "../../../assets/hero/img/diamond.png";
+import star from "../../../assets/hero/img/star.png";
 import triangle from "../../../assets/hero/img/triangle.png";
 
 const MagicButton = () => {
   return (
     <div className="container bg-body">
       <a
-        href="#"
+        href="https://drive.google.com/file/d/1mMisSgPVI7NFLNIjVZyO2PdpsO01k45B/view"
         className="button relative transform transition-transform duration-400 hover:rotate-[-4deg] hover:scale-[1.1]"
       >
         <div className="button__content relative p-5 px-12 rounded-full border-3 border-white text-black flex items-center gap-2 overflow-hidden">
-        <a href="https://drive.google.com/file/d/1mMisSgPVI7NFLNIjVZyO2PdpsO01k45B/view"><span className="button__text font-bold">Download CV</span></a>
+          <a href="https://drive.google.com/file/d/1mMisSgPVI7NFLNIjVZyO2PdpsO01k45B/view">
+            <span className="button__text font-bold">Download CV</span>
+          </a>
           <div className="button__reflection-1 absolute top-0 left-[-100%] w-2 h-30 bg-reflection rotate-[10deg] transition-left duration-600 ease-in-out hover:left-[120%]"></div>
           <div className="button__reflection-2 absolute top-0 left-[70%] w-2 h-30 bg-reflection rotate-[7deg] transition-left duration-600 ease-in-out hover:left-[0%]"></div>
         </div>

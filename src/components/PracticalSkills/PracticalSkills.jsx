@@ -76,12 +76,8 @@ export function PracticalSkills() {
   };
 
   return (
-    <div className="bg-[#0a0a1a] py-2 overflow-hidden">
+    <div className="py-2 overflow-hidden">
       <div className="relative w-full">
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
-
         <div className="relative">
           <div
             className="flex gap-8 w-[200%] cursor-grab animate-scroll"
